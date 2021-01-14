@@ -45,35 +45,36 @@ def epenser(array,count)
   end
   return epenser
 end
-listnH = []
-hand = 0
-position = 0
-def repart(array,hand)
-  array.each.size do |i|
-    puts i
-    # if i == hand
-    #   listnH.push hand[position]
+
+def characters_by_element(array)
+  first = []
+  second = []
+  34.times do |j|
+    count = 0 
+    array.each do |i|
+    if i.size == j
+      count += 1
+      first.push[j] = "Le nombre de comptes comprenant #{j} caractères est de #{count}"
     end
-    # hand += 1
+  end
+  end
+  first.each do |i|
+    unless i == nil
+    second.push i
+  end
+  end
+  return second
 end
 
-puts repart(array,hand)
 
-# Combien y a-t-il de handle dans cette array ?
-    # puts "l'array de ce programme contient #{array.size} handles."
-# Quel est le handle le plus court de cette liste ?
-    # puts "La handle la plus courte est #{atMin}."
-# Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)
-    # puts  "Il y a #{list5.size} handles de 5 caractères."
-# Combien commencent par une majuscule (première lettre juste après le @) ?
-    # puts "Il y a #{listMaj.size} handles qui commencent par une majuscule."
-# Trie la liste de handle par ordre alphabétique.
-    # puts "\nVoici la liste par ordre alphabétique :"
-    # puts array.sort
-# Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)
-    # puts "Voici la liste classé du plus petit au plus grand :"
-    # puts listMinMax
-# Quelle est la position dans l'array de la personne @epenser ?
-    # epenser = epenser(array,count)
-    # puts epenser
-# Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)
+puts "l'array de ce programme contient #{array.size} handles."
+puts "La handle la plus courte est #{atMin}."
+puts  "Il y a #{list5.size} handles de 5 caractères."
+puts "Il y a #{listMaj.size} handles qui commencent par une majuscule."
+puts "\nVoici la liste par ordre alphabétique :"
+puts array.sort
+puts "Voici la liste classé du plus petit au plus grand :"
+puts listMinMax
+epenser = epenser(array,count)
+puts "epenser se trouve à la position #{epenser}."
+puts characters_by_element(array)

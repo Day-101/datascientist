@@ -6,74 +6,14 @@ test = 0
 listABC = [*('A'..'Z')]
 listMaj = []
 listMinMax = []
-count = 1
+count = 2
 
-array.each do |i|
-  if i.size.to_i < min
-      min = i.size
-      atMin = i
+array.each do |l|
+  if l.size < count
+    listMinMax.push(l)
   end
+  count += 1
 end
 
-array.each do |j|
-  if j.size.to_i == 6
-    list5.push(j)
-  end
-end
-
-array.each do |k|
-  if listABC.include? k.slice(1,1)
-    listMaj.push k
-  end
-end
-
-34.times do |l|
-  array.each do |m|
-    if m.size.to_i == l
-        listMinMax.push m
-    end
-  end
-end
-
-def epenser(array,count)
-    epenser = 0
-    array.each do |n|
-    if n == "@epenser"
-        epenser = count
-    end
-    count += 1
-  end
-  return epenser
-end
-listnH = []
-hand = 0
-position = 0
-def repart(array,hand)
-  array.each.size do |i|
-    puts i
-    # if i == hand
-    #   listnH.push hand[position]
-    end
-    # hand += 1
-end
-
-puts repart(array,hand)
-
-# Combien y a-t-il de handle dans cette array ?
-    # puts "l'array de ce programme contient #{array.size} handles."
-# Quel est le handle le plus court de cette liste ?
-    # puts "La handle la plus courte est #{atMin}."
-# Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)
-    # puts  "Il y a #{list5.size} handles de 5 caractères."
-# Combien commencent par une majuscule (première lettre juste après le @) ?
-    # puts "Il y a #{listMaj.size} handles qui commencent par une majuscule."
-# Trie la liste de handle par ordre alphabétique.
-    # puts "\nVoici la liste par ordre alphabétique :"
-    # puts array.sort
-# Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)
-    # puts "Voici la liste classé du plus petit au plus grand :"
-    # puts listMinMax
-# Quelle est la position dans l'array de la personne @epenser ?
-    # epenser = epenser(array,count)
-    # puts epenser
-# Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)
+puts listMinMax
+puts count
